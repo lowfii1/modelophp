@@ -13,11 +13,23 @@
 </head>
 <body class="fundofixo">
     <!-- Area de menu -->
-        <?php include 'menu_publico.php'?>
+        <?php include 'menu_publico.php';?>
         <a name="home">&nbsp;</a>
         <main class="container">
         <!-- area de carousel -->
-         <?php include 'carousel.php'?>
+         <?php include 'carousel.php';?>
+         <!-- area de destaque -->
+          <a class="pt-6" name="destaques">&nbsp;</a>
+          <?php include 'produtos_destaque.php';?>
+          <!-- area geral de produtos -->
+          <a class="pt-6" name="produtos">&nbsp;</a>
+          <?php include 'produtos_geral.php';?>
+          <!-- rodapé -->
+           <footer class="panel-footer" style="background: none;">
+            <?php include 'rodape.php';?>
+            <a name="contato"></a>
+    
+           </footer>
         </main>
 </body>
 </html>
