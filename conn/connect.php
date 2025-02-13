@@ -1,5 +1,5 @@
 <?php 
-$host = "10.91.45.49";
+$host = "localhost";
 $database = "tinsphpdb01";
 $root = "root";
 $pass = "";
