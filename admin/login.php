@@ -1,19 +1,19 @@
 <?php 
 include '../conn/connect.php';
-// inicia a verificação do login
+// inicia a verificação do Login
+
 if($_POST){
 $login = $_POST['login'];
 $senha = $_POST['senha'];
 $loginResult = $conn->query("select * from usuarios where login = '$login' and senha = md5('$senha')");
 $rowLogin = $loginResult->fetch_assoc();
-
 // var_dump($rowLogin);
-// die(); 
+// die();
 $numRow = $loginResult->num_rows;
 if(!isset($_SESSION)){
     $sessaoAntiga = session_name('chulettaaa');
     session_start();
-    $session_name_new = session_name(); 
+    $session_name_new = session_name();
 }
 if($numRow > 0){
     $_SESSION['login_usuario'] = $login;
@@ -22,10 +22,13 @@ if($numRow > 0){
     if ($rowLogin['nivel'] == 'sup'){
         echo "<script>window.open('index.php','_self')</script>";
     }else{
-        echo"<script>window.open('../cliente/index.php','_self')</script>";//?cliente=".$login.",'_self'
+        echo "<script>window.open('../cliente/index.php?cliente=".$login."','_self')</script>";
     }
 }
+
+
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -93,4 +96,5 @@ if($numRow > 0){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
 </body>
+
 </html>
